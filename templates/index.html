@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1> <b>Reto</b></h1>
+    <h2>Optimización de escenarios en producción para CEMEX</h2>
+    <p>CEMEX Ventures es una compañía de producción industria de cemento que quiere disminuir sus costos sin tener un mayor impacto en el medio ambiente. Para lograr esto se han recaudado datos acerca de diferentes factores que estan involucrados en la producción de cemento, los cuales fueron analizados con diferentes métodos de regresión para encontrar la manera más óptima para utilizar las diferentes energías.</p>
+    <hr>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <br>
+                <h4>Problemática del reto</h4>
+                <p>CEMEX Ventures tiene  distintas problemáticas que lo limitan de obtener la mayor cantidad de ingresos, por lo que tienen un dilema entre usar lo recursos indispensable y minimizar los gastos por los costo de las energía durante el proceso de manufactura, los cuales son necesarios para cumplir los estándares de calidad establecidos por la empresa. El principal desafío al cual se enfrentan es encontrar la forma de optimizar el uso y gasto de sus energías.</p>
+            </div>
+            <div class="col-4">
+                <img src="{{url_for('static', filename='images/cemexlogo.jpg')}}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <img src="{{url_for('static', filename='images/cemexinovando.png')}}" alt="" class="img-fluid">
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <h4 class="d-flex justify-content-center"><b>Objetivos</b></h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <h5>Objetivo de negocio</h5>
+                        <p>Conociendo las necesidades de CEMEX Ventures, nuestro objetivo es encontrar el modelo de regresión más adecuado para la optimización de las energías disponibles sin aumentar el costo de producción  tomando en cuenta que este debe de seguir siendo rentable.</p>
+                    </div>
+                    <div class="col-sm">
+                        <h5>Plan de proyecto</h5>
+                        <ol>
+                            <li>Entender los datos proporcionados</li>
+                            <li>Limpiar y estandarizar los datos</li>
+                            <li>Implementar y probar diferentes modelos</li>
+                            <li>Obtener los mejores parámetros para el modelo seleccionado</li>
+                            <li>Generar modelo final para su uso</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-8">
+                <div class="row">
+                    <h3 class="d-flex justify-content-center"><b>Modelo seleccionado</b></h3>
+                    <h5 class="d-flex justify-content-center">Random Forest Regressor</h5>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" >Evaluación</th>
+                                    <th scope="col" >Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td >R^2</td>
+                                    <td >0.184</td>
+                                </tr>
+                                <tr>
+                                    <td>MAE</td>
+                                    <td>0.134 (0.003)</td>
+                                </tr>
+                                <tr>
+                                    <td>MSE</td>
+                                    <td>0.32377</td>
+                                </tr>
+                                <tr>
+                                    <td>RMSE</td>
+                                    <td>0.1799</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      
+                    </div>
+                    <div class="col-sm">
+                        <br>
+                        <p> El algoritmo funciona construyendo una multitud de árboles de decisión en el momento del entrenamiento y generando la media / modo de predicción de los árboles individuales.</p>
+                    </div>
+                </div>
+            </div>
+                <div class="col-4">
+                    <img src="{{url_for('static', filename='images/ai.png')}}" alt="" class="img-fluid" height="50px">
+                </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

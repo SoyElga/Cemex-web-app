@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Inputs</h1>
+    <hr>
+    <br/>
+
+    <form action="prediccion" method="POST">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    {{ form.hidden_tag() }}
+                    
+                    {{ form.dureza.label(class="form-label") }}
+                    {{ form.dureza(class="form-control") }}
+                </div>
+                <div class="col-sm">
+                    {{ form.asp.label(class="form-label") }}
+                    {{ form.asp(class="form-control") }}
+                </div>
+                <div class="col-sm">
+                    {{ form.calidad.label(class="form-label") }}
+                    {{ form.calidad(class="form-control") }}
+                </div>
+                <div class="col-sm">
+                    {{ form.tasa_prod.label(class="form-label") }}
+                    {{ form.tasa_prod(class="form-control") }}
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                
+                <div class="col-sm">
+                    {{ form.submit(class="btn btn-dark btn-lg justify-content-center")}}
+                </div>
+                <div class="col-sm"></div>
+                
+            </div>
+        </div>
+    </form>
+    <hr>
+    
+    <br>
+    <br>
+
+{% endblock %}

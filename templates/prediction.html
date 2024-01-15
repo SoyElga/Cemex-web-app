@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="d-flex justify-content-center">Inputs</h1>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm ">
+            <h3 class="d-flex justify-content-center">Dureza</h3>
+        </div>
+        <div class="col-sm">
+            <h3 class="d-flex justify-content-center">Aspiración</h3>
+        </div>
+        <div class="col-sm">
+            <h3 class="d-flex justify-content-center">Calidad</h3>
+        </div>
+        <div class="col-sm">
+            <h3 class="d-flex justify-content-center">Tasa de producción</h3>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm ">
+            <h3 class="d-flex justify-content-center">{{inputs[0]}}</h3>
+        </div>
+        <div class="col-sm">
+            <h3 class="d-flex justify-content-center">{{inputs[1]}}</h3>
+        </div>
+        <div class="col-sm">
+            <h3 class="d-flex justify-content-center">{{inputs[2]}}</h3>
+        </div>
+        <div class="col-sm">
+            <h3 class="d-flex justify-content-center">{{inputs[3]}}</h3>
+        </div>
+    </div>
+</div>
+<hr style="height:5px">
+<h1 class="d-flex justify-content-center">Predicciones</h1>
+<p class="d-flex justify-content-center">error: 17.1%</p>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <h2>Energía Calórica: {{'%0.2f' % EC|float}} Kcal</h2>
+            </div>
+            <hr>
+            <div class="row">
+                <h2>Energía Eléctrica: {{'%0.2f' % EE|float}} Kcal</h2>
+            </div>
+            <hr>
+            <div class="row">
+                <h2>Costo estimado: {{'%0.2f' % price|float}} </h2>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="row">
+                <h3 class="d-flex justify-content-center">Relación costo/calidad</h3>
+                {{html_graph | safe }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
