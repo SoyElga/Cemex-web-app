@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField
@@ -9,7 +10,7 @@ import matplotlib.pyplot as plt, mpld3
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "Espero que saquemos 10 con esta pagina web"
+app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', 'ESPEROQUESAQUEMOS10CONESTEPROYECTO')
 
 #Form class
 class ModelInputForm(FlaskForm):
